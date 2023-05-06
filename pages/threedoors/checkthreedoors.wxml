@@ -1,0 +1,56 @@
+<!--pages/threedoors/checkthreedoors.wxml-->
+<view class="container">
+  <view class="main">
+    <view class="pageTitle">三门问题验证</view>
+    <view class="title">验证组数</view>
+    <view class="content">
+      <radio-group class="option" bindchange="bindCount">
+        <radio class="optionLine" value="10" checked="true">10组</radio>
+        <radio class="optionLine" value="100">100组</radio>
+      </radio-group>
+    </view>
+    <!-- <view class="title">验证选项</view>
+    <view class="content">
+      <radio-group class="option">
+        <radio class="optionLine" checked="true">换</radio>
+        <radio class="optionLine">不换</radio>
+      </radio-group>
+    </view> -->
+    <view class="title">
+      验证数据
+      <text bindtap="bindHideTest">隐藏</text>
+    </view>
+    <view class="content">
+      <view class="test">
+        <button class="mini-btn" type="warn" size="mini" bindtap="bindCreate">重新生成</button>
+        <button class="mini-btn" type="warn" size="mini" bindtap="bindRandom">随机选择</button>
+        <button class="mini-btn" type="warn" size="mini" bindtap="bindCheck">验证结果</button>
+      </view>
+      <view class="test" wx:for="{{testList}}" wx:key="index" wx:if="{{isShowTest}}">
+        <text>第{{index+1}}组：</text>
+        <radio-group class="option" bindchange="bindOption" data-id="{{index}}">
+          <radio class="optionLine" value="0" checked="{{item.option==0}}">1号门</radio>
+          <radio class="optionLine" value="1" checked="{{item.option==1}}">2号门</radio>
+          <radio class="optionLine" value="2" checked="{{item.option==2}}">3号门</radio>
+        </radio-group>
+      </view>
+    </view>
+    <view class="title">验证统计</view>
+    <view class="content">
+      <view wx:if="{{isCheckTest}}">你本次验证了{{count}}组数据，换门中奖{{aCount}}次（占比{{aRate}}%）,不换门中奖{{count-aCount}}次（占比{{100-aRate}}%）</view>
+      <view wx:if="{{isRecord}}">你累计验证了{{totalCount}}组数据，换门中奖{{totalACount}}次（占比{{totalARate}}%）,不换门中奖{{totalCount-totalACount}}次（占比{{100-totalARate}}%）。</view>
+      <view wx:if="{{!isRecord}}">你还没有验证数据。</view>
+    </view>
+    <view class="title">
+      验证明细
+      <text bindtap="bindHideCheck">隐藏</text>
+    </view>
+    <view class="content">
+      <view wx:for="{{testList}}" wx:key="index" wx:if="{{isShowCheck}}">
+        第{{index+1}}组：奖品在{{item.answer+1}}号门。选择{{item.option+1}}号门，打开{{item.erase+1}}号门。换：{{item.a==0?'不':''}}中奖，不换：{{item.a==1?'不':''}}中奖。
+      </view>
+    </view>
+    <view class="footer" bindtap="bindBack">回首页</view>
+  </view>
+</view>
+

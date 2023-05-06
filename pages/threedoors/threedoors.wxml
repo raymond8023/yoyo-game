@@ -1,0 +1,30 @@
+<!--pages/threedoors/threedoors.wxml-->
+<view class="container">
+  <view class="main">
+    <view class="pageTitle">三门问题</view>
+    <view class="title">问题描述</view>
+    <view class="content">三门问题（Monty Hall problem）亦称为蒙提霍尔问题、蒙特霍问题或蒙提霍尔悖论，大致出自美国的电视游戏节目Let's Make a Deal。问题名字来自该节目的主持人蒙提·霍尔（Monty Hall）。参赛者会看见三扇关闭了的门，其中一扇的后面有一辆汽车，选中后面有车的那扇门可赢得该汽车，另外两扇门后面则各藏有一只山羊。当参赛者选定了一扇门，但未去开启它的时候，节目主持人开启剩下两扇门的其中一扇，露出其中一只山羊。主持人其后会问参赛者要不要换另一扇仍然关上的门。问题是：换另一扇门是否会增加参赛者赢得汽车的机率。</view>
+    <view class="image"></view>
+    <view class="title">
+      选项
+      <text wx:if="{{threedoors.isSelect}}">你的选择是：{{threedoors.selectOption}}</text>
+    </view>
+    <view class="content">
+      <radio-group class="option" bindchange="bindOption">
+        <radio class="optionLine" value="A">A、换不换都一样（都是1/3）</radio>
+        <radio class="optionLine" value="B">B、换了概率更高（不换1/3，换1/2）</radio>
+        <radio class="optionLine" value="C">C、换了概率更高（不换1/3，换2/3）</radio>
+        <radio class="optionLine" value="D">D、换了概率更低（不换1/3，换1/6）</radio>
+      </radio-group>
+    </view>
+    <view class="title" bindtap="bindAnswer">
+      看答案
+      <text wx:if="{{threedoors.selectOption=='C' && threedoors.isAnswer}}">你选对了！</text>
+      <text wx:if="{{threedoors.selectOption!='C' && threedoors.isAnswer}}">你选错了！</text>
+    </view>
+    <view class="content" wx:if="{{threedoors.isAnswer}}">答案是C。不换门的话，赢得汽车的概率是1/3。换门的话，赢得汽车的概率是2/3。选择换门的话，假设一开始没有选中车（即选到了一只羊），这时主持人必然会去掉另一只羊，所以换门必中车。而一开始选中羊的概率是2/3，所以换门中车的概率是2/3。</view>
+    <view class="title" bindtap="bindCheck">去验证</view>
+    <view class="content"></view>
+    <view class="footer" bindtap="bindBack">回首页</view>
+  </view>
+</view>

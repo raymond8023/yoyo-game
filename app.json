@@ -1,0 +1,16 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/threedoors/threedoors",
+        "pages/threedoors/checkthreedoors"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "YoyoGame",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#3498db"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}
