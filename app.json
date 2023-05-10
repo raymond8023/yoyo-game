@@ -2,7 +2,9 @@
     "pages": [
         "pages/index/index",
         "pages/threedoors/threedoors",
-        "pages/threedoors/checkthreedoors"
+        "pages/threedoors/checkthreedoors",
+        "pages/fairgamble/fairgamble",
+        "pages/fairgamble/check"
     ],
     "window": {
         "backgroundTextStyle": "light",

@@ -1,5 +1,4 @@
-/* pages/threedoors/checkthreedoors.wxss */
-
+/* pages/fairgamble/check.wxss */
 
 .test{
   margin-top: 20rpx;
@@ -9,13 +8,19 @@
   justify-content: space-around;
 }
 
+.test input{
+  width: 200rpx;
+  border:1rpx solid #2c2c2c;
+}
+
+.test slider{
+  width: 500rpx;
+}
+
+
 .option{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-}
-
-.optionLine{
-  /* margin-top: 20rpx; */
 }
 

@@ -1,0 +1,98 @@
+<!--pages/fairgamble/check.wxml-->
+<view class="container">
+  <view class="main">
+    <view class="pageTitle">公平赌博验证</view>
+    <view class="title">
+      验证说明
+      <text bindtap="bindHideTip">隐藏</text>
+    </view>
+    <view class="content" wx:if="{{isShowTip}}">
+      本验证方式采用事前随机生成10万组开奖结果的方式，以保证开奖结果不会随你的选择而变化。你可以选择穿越回任意一期开始你的赌博。除非手动选择“重置中奖方案”，否则每期的开奖结果不会变化。
+      <view class="test">
+        <button class="mini-btn" type="warn" size="mini" bindtap="bindReCreate">重置中奖方案</button>
+      </view>
+    </view>
+    <view class="title">统计信息</view>
+    <view class="content">
+      <view>本次剩余资金：{{money}}元</view>
+      <view>本次已赌博：{{cycle}}轮</view>
+      <view>总共输光了：{{loseCount}}次</view>
+      <view>平均输光轮数：{{averageCycle}}轮</view>
+      <view>历史最大资金：{{maxMoney}}元</view>
+      <view>某次输光前超过100元：{{missionCount}}次</view>
+      <view>超过100元频率：{{missionRate}}%</view>
+    </view>
+    <view class="title">
+      选择期数
+      <text bindtap="bindHideContinuous">隐藏</text>
+    </view>
+    <view class="content">
+      <view class="test">
+        你将从第
+        <input type="number" value="{{startNumber}}" bindinput="bindInputNumber"/>
+        期开始验证
+      </view>
+      <view class="test">
+        <button class="mini-btn" type="warn" size="mini" bindtap="bindRandomStart">随机选择</button>
+        <button class="mini-btn" type="warn" size="mini" bindtap="bindSearch">按条件搜索</button>
+      </view>
+      <view class="test">
+        搜索条件：连续{{continuousCount}}次出现某一面
+      </view>
+      <view class="test">
+        5<slider bindchanging="bindSliderContinuous" min="5" max="15" value="{{continuousCount}}"/>15
+      </view>
+      <view wx:for="{{continuousList}}" wx:key="index" wx:if="{{isShowContinuous}}">
+        {{index+1}}、第{{item.idx}}期开出{{item.answer==0?'正':'反'}}面。
+      </view>
+    </view>
+    <view class="title">验证组数</view>
+    <view class="content">
+      <radio-group class="option" bindchange="bindCount">
+        <radio class="optionLine" value="1" checked="true">1组</radio>
+        <radio class="optionLine" value="10">10组</radio>
+        <radio class="optionLine" value="100">100组</radio>
+      </radio-group>
+    </view>
+    <view class="title">
+      验证数据
+      <text bindtap="bindHideTest">隐藏</text>
+    </view>
+    <view class="content">
+      <view class="test">
+        每期下注：
+        <input type="number" value="{{cost}}" bindinput="bindInputCost"/>
+      </view>
+      <view class="test">
+        0%<slider bindchanging="bindSliderCost" min="0" max="10" value="{{costRate}}"/>100%
+      </view>      
+      <view class="test">
+        <button class="mini-btn" type="warn" size="mini" bindtap="bindRandom">随机选择</button>
+        <button class="mini-btn" type="warn" size="mini" bindtap="bindCheck">买定离手</button>
+      </view>
+      <view class="test">
+        <radio-group class="option" bindchange="bindOptionAll">
+          <radio class="optionLine" value="0">全选正面　</radio>
+          <radio class="optionLine" value="1">全选反面　</radio>
+        </radio-group>
+      </view>
+      <view class="test" wx:for="{{testList}}" wx:key="index" wx:if="{{isShowTest}}">
+        <text>第{{item.idx}}期：</text>
+        <radio-group class="option" bindchange="bindOption" data-id="{{index}}">
+          <radio class="optionLine" value="0" checked="{{item.option==0}}">正面　</radio>
+          <radio class="optionLine" value="1" checked="{{item.option==1}}">反面</radio>
+        </radio-group>
+      </view>
+    </view>
+    <view class="title">
+      验证明细
+      <text bindtap="bindHideCheck">隐藏</text>
+    </view>
+    <view class="content">
+      <view wx:for="{{resultList}}" wx:key="index" wx:if="{{isShowCheck}}">
+        {{item}}
+      </view>
+    </view>
+    <view class="footer" bindtap="bindBack">回首页</view>
+  </view>
+</view>

@@ -94,7 +94,21 @@ Page({
       threedoors.totalCount=this.data.totalCount
       threedoors.totalACount=this.data.totalACount
       wx.setStorageSync('threedoors', threedoors)
-      this.bindHideTest()
+      this.setData({
+        isShowTest:false
+      })
+    }
+  },
+
+  bindOptionAll(e){
+    if(this.data.isCreateTest){
+      var tmpList=this.data.testList
+      for(var i=0;i<this.data.count;i++){
+        tmpList[i].option=e.detail.value*1
+      }
+      this.setData({
+        testList:tmpList,
+      })
     }
   },
 

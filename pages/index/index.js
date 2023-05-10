@@ -7,15 +7,14 @@ var user;
 
 Page({
 
-  bindMenu(){
+  bindMenu(e){
+    // console.log(e)
     wx.navigateTo({
-      url: '/pages/threedoors/threedoors',
+      url: '/pages/'+e.currentTarget.dataset.link+'/'+e.currentTarget.dataset.link,
     })
   },
 
   onLoad(){
-    user = app.userLogin().then(res=>{
-      // console.log(res)
-    })
+
   }
 })

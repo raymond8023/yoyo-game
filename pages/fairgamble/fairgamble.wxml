@@ -1,0 +1,19 @@
+<!--pages/fairgamble/fairgamble.wxml-->
+<view class="container">
+  <view class="main">
+    <view class="pageTitle">公平的赌博</view>
+    <view class="title">问题描述</view>
+    <view class="content">
+      <view>假设有一个绝对公平的赌博游戏：抛硬币，每下注1元，猜中赢1元（得2元），猜错输1元。</view>
+      <view>有两个有意思的结论：</view>
+      <view>1、赌徒谬误：无论出现连续开多少次正面，下一次出现反面的概率都不会更高。</view>
+      <view>2、赌徒输光定律：只要你坚持一直赌下去，你就一定会输光。假设你的初始资金有10元，如果你准备赚到100元就收手，你将有90%的可能会输光。</view>
+    </view>
+    <view>
+      <image src="../../images/fairgamble.jpg" mode="widthFix"></image>
+    </view>
+    <view class="title" bindtap="bindCheck">去验证</view>
+    <view class="content"></view>
+    <view class="footer" bindtap="bindBack">回首页</view>
+  </view>
+</view>

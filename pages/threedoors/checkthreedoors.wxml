@@ -26,6 +26,13 @@
         <button class="mini-btn" type="warn" size="mini" bindtap="bindRandom">随机选择</button>
         <button class="mini-btn" type="warn" size="mini" bindtap="bindCheck">验证结果</button>
       </view>
+      <view class="test">
+        <radio-group class="option" bindchange="bindOptionAll">
+          <radio class="optionLine" value="0">全选1　</radio>
+          <radio class="optionLine" value="1">全选2　</radio>
+          <radio class="optionLine" value="2">全选3　</radio>
+        </radio-group>
+      </view>
       <view class="test" wx:for="{{testList}}" wx:key="index" wx:if="{{isShowTest}}">
         <text>第{{index+1}}组：</text>
         <radio-group class="option" bindchange="bindOption" data-id="{{index}}">

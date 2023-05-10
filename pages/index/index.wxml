@@ -12,14 +12,14 @@
       </view> -->
     </view>
     <view class="menu">
-      <!-- <view class="item" bindtap="bindMeal" data-content="is_breakplus">
-        <image src="../../images/tea.png" mode="widthFix"></image>
-        <text>上午</text>
+      <view class="item" bindtap="bindMenu" data-link="fairgamble">
+        <image src="../../images/fair.png" mode="widthFix"></image>
+        <text>公平赌博</text>
       </view>
-      <view class="item" bindtap="bindMeal" data-content="is_lunchplus">
+      <!-- <view class="item" bindtap="bindMeal" data-content="is_lunchplus">
         <image src="../../images/tea.png" mode="widthFix"></image>
         <text>下午</text>
-      </view> -->
+      </view>  -->
     </view>
   </view>
 </view>
