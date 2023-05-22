@@ -12,7 +12,10 @@
     <view>
       <image src="../../images/fairgamble.jpg" mode="widthFix"></image>
     </view>
-    <view class="title" bindtap="bindCheck">去验证</view>
+    <view class="title" bindtap="bindCheck">
+      去验证
+      <text>>>></text>
+    </view>
     <view class="content"></view>
     <view class="footer" bindtap="bindBack">回首页</view>
   </view>

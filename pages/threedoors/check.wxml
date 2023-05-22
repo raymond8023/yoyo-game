@@ -9,13 +9,6 @@
         <radio class="optionLine" value="100">100组</radio>
       </radio-group>
     </view>
-    <!-- <view class="title">验证选项</view>
-    <view class="content">
-      <radio-group class="option">
-        <radio class="optionLine" checked="true">换</radio>
-        <radio class="optionLine">不换</radio>
-      </radio-group>
-    </view> -->
     <view class="title">
       验证数据
       <text bindtap="bindHideTest">隐藏</text>
@@ -42,7 +35,10 @@
         </radio-group>
       </view>
     </view>
-    <view class="title">验证统计</view>
+    <view class="title">
+      验证统计
+      <text bindtap="bindClear">清空记录</text>
+    </view>
     <view class="content">
       <view wx:if="{{isCheckTest}}">你本次验证了{{count}}组数据，换门中奖{{aCount}}次（占比{{aRate}}%）,不换门中奖{{count-aCount}}次（占比{{100-aRate}}%）</view>
       <view wx:if="{{isRecord}}">你累计验证了{{totalCount}}组数据，换门中奖{{totalACount}}次（占比{{totalARate}}%）,不换门中奖{{totalCount-totalACount}}次（占比{{100-totalARate}}%）。</view>
@@ -53,7 +49,7 @@
       <text bindtap="bindHideCheck">隐藏</text>
     </view>
     <view class="content">
-      <view wx:for="{{testList}}" wx:key="index" wx:if="{{isShowCheck}}">
+      <view wx:for="{{resultList}}" wx:key="index" wx:if="{{isShowCheck}}">
         第{{index+1}}组：奖品在{{item.answer+1}}号门。选择{{item.option+1}}号门，打开{{item.erase+1}}号门。换：{{item.a==0?'不':''}}中奖，不换：{{item.a==1?'不':''}}中奖。
       </view>
     </view>

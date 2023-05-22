@@ -1,0 +1,38 @@
+<!--pages/boxes/boxes.wxml-->
+<view class="container">
+  <view class="main">
+    <view class="pageTitle">天才基本法</view>
+    <view class="title">问题描述</view>
+    <view class="content">电视剧《天才基本法》里林朝夕参加奥数集训时有这样一道概率题：三个完全相同的盒子，一个盒子里装了两个红球，一个盒子里装了两个蓝球，一个盒子里装了一个红球和一个蓝球。从三个盒子中随机选择了一个盒子，从里面拿出了一个球，发现是红色的，问这个盒子里剩下的那个球是红色的概率有多大？</view>
+    <view>
+      <image src="../../images/boxes.jpg" mode="widthFix"></image>
+    </view>
+    <view class="title">
+      选项
+      <text wx:if="{{isSelect}}">你的选择是：{{selectOption}}</text>
+    </view>
+    <view class="content">
+      <radio-group class="option" bindchange="bindOption">
+        <radio class="optionLine" value="A" checked="{{selectOption=='A'}}">A、1/3</radio>
+        <radio class="optionLine" value="B" checked="{{selectOption=='B'}}">B、1/2</radio>
+        <radio class="optionLine" value="C" checked="{{selectOption=='C'}}">C、2/3</radio>
+        <radio class="optionLine" value="D" checked="{{selectOption=='D'}}">D、3/4</radio>
+      </radio-group>
+    </view>
+    <view class="title" bindtap="bindAnswer">
+      看答案
+      <text wx:if="{{selectOption=='C' && isAnswer}}">你选对了！</text>
+      <text wx:if="{{selectOption!='C' && isAnswer}}">你选错了！</text>
+    </view>
+    <view class="content" wx:if="{{isAnswer}}">答案是C。拿出一个红球，首先排除两个蓝球的盒子，似乎剩下两个盒子就是1/2概率。但是第一步“拿出一个球是红球”时就已经确定了盒子，而这个红球是从两个红球的盒子中拿出来的概率要大得多（2/3）。</view>
+    <view class="title" bindtap="bindCheck">有趣的变化</view>
+    <view class="content">1、三个完全相同的盒子，一个盒子里装了两个红球，一个盒子里装了一个红球，一个盒子空。从三个盒子中随机选择了一个盒子，从里面拿出了一个球，问这个盒子里还能拿出一个球的概率有多大？</view>
+    <view class="content">2、如果一个家庭有两个孩子，其中一个是男孩，问另一个也是男孩的概率是多少？</view>
+    <view class="title" bindtap="bindCheck">
+      去验证
+      <text>>>></text>
+    </view>
+    <view class="content"></view>
+    <view class="footer" bindtap="bindBack">回首页</view>
+  </view>
+</view>

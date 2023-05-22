@@ -1,0 +1,10 @@
+/* pages/boxes/boxes.wxss */
+
+.option{
+  display: flex;
+  flex-direction: column;
+}
+
+.optionLine{
+  margin-top: 20rpx;
+}

@@ -1,8 +1,7 @@
-// pages/threedoors/threedoors.js
+// pages/boxes/boxes.js
 var dataBuffer
 
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -13,19 +12,19 @@ Page({
   },
 
   onShow() {
-    dataBuffer=wx.getStorageSync('threedoors')
+    dataBuffer=wx.getStorageSync('boxes')
     if(Object.keys(dataBuffer).length==0){
       dataBuffer={isAnswer:false,}
     }
     if(dataBuffer.isAnswer){
       this.setData({
-        isSelect:dataBuffer.isSelect,
         isAnswer:dataBuffer.isAnswer,
-        selectOption:dataBuffer.selectOption
+        isSelect:dataBuffer.isSelect,
+        selectOption: dataBuffer.selectOption,
       })
     }
   },
-  
+
   bindOption(e){
     if(this.data.isAnswer){
       wx.showModal({
@@ -59,12 +58,11 @@ Page({
                 isAnswer:true,
               })
               //写缓存
-              dataBuffer.isSelect=true
               dataBuffer.isAnswer=true
+              dataBuffer.isSelect=true
               dataBuffer.selectOption=that.data.selectOption
-              wx.setStorageSync('threedoors', dataBuffer)
-            }
-            // else if (res.cancel) {}
+              wx.setStorageSync('boxes', dataBuffer)
+            } else if (res.cancel) {}
           }
         })
       }
@@ -76,13 +74,12 @@ Page({
       url: './check',
     })
   },
-
   bindBack(){
     wx.navigateBack({
       delta: 9,
     })
   },
-
+  
   /**
    * 生命周期函数--监听页面加载
    */

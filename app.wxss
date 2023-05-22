@@ -48,7 +48,7 @@ page {
 }
 
 image{
-  width: 800rpx;
+  width: 100%;
 }
 
 .footer{

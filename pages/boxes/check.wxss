@@ -1,0 +1,15 @@
+/* pages/boxes/check.wxss */
+
+.test{
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.option{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

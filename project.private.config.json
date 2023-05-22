@@ -9,7 +9,7 @@
       "list": [
         {
           "name": "",
-          "pathName": "pages/threedoors/threedoors",
+          "pathName": "pages/boxes/boxes",
           "query": "",
           "launchMode": "default",
           "scene": null
@@ -17,6 +17,13 @@
         {
           "name": "",
           "pathName": "pages/fairgamble/fairgamble",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/threedoors/threedoors",
           "query": "",
           "launchMode": "default",
           "scene": null

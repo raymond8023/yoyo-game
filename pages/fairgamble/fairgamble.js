@@ -10,7 +10,7 @@ Page({
 
   bindCheck(){
     wx.navigateTo({
-      url: '/pages/fairgamble/check',
+      url: './check',
     })
   },
 

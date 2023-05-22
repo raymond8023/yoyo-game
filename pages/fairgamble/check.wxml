@@ -1,7 +1,7 @@
 <!--pages/fairgamble/check.wxml-->
 <view class="container">
   <view class="main">
-    <view class="pageTitle">公平赌博验证</view>
+    <view class="pageTitle">公平的赌博验证</view>
     <view class="title">
       验证说明
       <text bindtap="bindHideTip">隐藏</text>
@@ -12,7 +12,10 @@
         <button class="mini-btn" type="warn" size="mini" bindtap="bindReCreate">重置中奖方案</button>
       </view>
     </view>
-    <view class="title">统计信息</view>
+    <view class="title">
+      统计信息
+      <text bindtap="bindClear">清空记录</text>
+    </view>
     <view class="content">
       <view>本次剩余资金：{{money}}元</view>
       <view>本次已赌博：{{cycle}}轮</view>
@@ -52,6 +55,7 @@
         <radio class="optionLine" value="1" checked="true">1组</radio>
         <radio class="optionLine" value="10">10组</radio>
         <radio class="optionLine" value="100">100组</radio>
+        <radio class="optionLine" value="1000">1000组</radio>
       </radio-group>
     </view>
     <view class="title">
@@ -61,19 +65,17 @@
     <view class="content">
       <view class="test">
         每期下注：
-        <input type="number" value="{{cost}}" bindinput="bindInputCost"/>
+        <input type="number" value="{{cost}}" bindinput="bindInputCost"/>元
+        <button class="mini-btn" type="warn" size="mini" bindtap="bindCheck">买定离手</button>
       </view>
       <view class="test">
         0%<slider bindchanging="bindSliderCost" min="0" max="10" value="{{costRate}}"/>100%
       </view>      
       <view class="test">
-        <button class="mini-btn" type="warn" size="mini" bindtap="bindRandom">随机选择</button>
-        <button class="mini-btn" type="warn" size="mini" bindtap="bindCheck">买定离手</button>
-      </view>
-      <view class="test">
         <radio-group class="option" bindchange="bindOptionAll">
-          <radio class="optionLine" value="0">全选正面　</radio>
-          <radio class="optionLine" value="1">全选反面　</radio>
+          <radio class="optionLine" value="-1" checked="true">随机选　</radio>
+          <radio class="optionLine" value="0">全正面　</radio>
+          <radio class="optionLine" value="1">全反面　</radio>
         </radio-group>
       </view>
       <view class="test" wx:for="{{testList}}" wx:key="index" wx:if="{{isShowTest}}">
@@ -94,5 +96,10 @@
       </view>
     </view>
     <view class="footer" bindtap="bindBack">回首页</view>
+    <movable-area class="movable-area">
+      <movable-view class="movable-view" direction="all" bindtap="bindHide">
+        <view>收起明细</view>
+      </movable-view>
+    </movable-area>
   </view>
 </view>

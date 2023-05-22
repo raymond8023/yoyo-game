@@ -1,0 +1,51 @@
+<!--pages/boxes/check.wxml-->
+<view class="container">
+  <view class="main">
+    <view class="pageTitle">天才基本法验证</view>
+    <view class="title">
+      验证说明
+    </view>
+    <view class="content">
+      <view>为便于描述给三个盒子编号：</view>
+      <view>A盒子：1号红球、2号红球</view>
+      <view>B盒子：3号红球、4号蓝球</view>
+      <view>C盒子：5号蓝球、6号蓝球</view>
+    </view>
+    <view class="title">
+      验证数据
+    </view>
+    <view class="content">
+      <view class="test">
+        <button class="mini-btn" type="warn" size="mini" bindtap="bindCheck">验证结果</button>
+      </view>
+      <view class="test">
+        <radio-group class="option" bindchange="bindCount">
+          <radio class="optionLine" value="10" checked="true">10组　</radio>
+          <radio class="optionLine" value="100">100组</radio>
+          <radio class="optionLine" value="1000">1000组</radio>
+        </radio-group>        
+      </view>
+    </view>
+    <view class="title">
+      验证统计
+      <text bindtap="bindClear">清空记录</text>
+    </view>
+    <view class="content">
+      <view wx:if="{{isCheckTest}}">你本次验证了{{count2}}组数据，第一次选中红球{{redCount}}次，第二次选中红球{{redCount2}}次，占比为{{redRate}}%。</view>
+      <view wx:if="{{isRecord}}">你累计验证了{{totalCount}}组数据，第一次选中红球{{totalRedCount}}次，第二次选中红球{{totalRedCount2}}次，占比为{{totalRedRate}}%。</view>
+      <view wx:if="{{!isRecord}}">你还没有验证数据。</view>
+    </view>
+    <view class="title">
+      验证明细
+      <text bindtap="bindHideCheck">隐藏</text>
+    </view>
+    <view class="content">
+      <view wx:for="{{testList}}" wx:key="index" wx:if="{{isShowCheck}}">
+        第{{index+1}}组：随机选中了{{item.box}}盒子，第一次选到了{{item.ball+1}}号球，{{item.ball>2?"是蓝球，本次不计入统计":item.ball==2?"是红球，第二次将摸到蓝球":"是红球，第二次将摸到红球"}}。
+      </view>
+    </view>
+    <view class="footer" bindtap="bindBack">回首页</view>
+  </view>
+</view>
+
+
