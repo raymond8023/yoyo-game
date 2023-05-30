@@ -40,7 +40,7 @@
       <text bindtap="bindClear">清空记录</text>
     </view>
     <view class="content">
-      <view wx:if="{{isCheckTest}}">你本次验证了{{count}}组数据，换门中奖{{aCount}}次（占比{{aRate}}%）,不换门中奖{{count-aCount}}次（占比{{100-aRate}}%）</view>
+      <view wx:if="{{isCheckTest}}">你本次验证了{{count2}}组数据，换门中奖{{aCount}}次（占比{{aRate}}%）,不换门中奖{{count2-aCount}}次（占比{{100-aRate}}%）</view>
       <view wx:if="{{isRecord}}">你累计验证了{{totalCount}}组数据，换门中奖{{totalACount}}次（占比{{totalARate}}%）,不换门中奖{{totalCount-totalACount}}次（占比{{100-totalARate}}%）。</view>
       <view wx:if="{{!isRecord}}">你还没有验证数据。</view>
     </view>

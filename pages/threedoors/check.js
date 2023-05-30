@@ -8,6 +8,7 @@ Page({
    */
   data: {
     count:10,
+    count2:0,
     aCount:0, //换门中奖次数
     aRate:0,
     totalCount:0,
@@ -73,6 +74,7 @@ Page({
     wx.setStorageSync('threedoors',dataBuffer)
     //更新显示
     this.setData({
+      count2:this.data.count,
       resultList:tmpList,
       isCheckTest: true,
       isShowCheck: true,

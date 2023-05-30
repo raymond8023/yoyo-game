@@ -32,7 +32,7 @@ Page({
         isRecord:dataBuffer.isRecord,
         totalCount:dataBuffer.totalCount,
         totalRedCount:dataBuffer.totalRedCount,
-        totalRedCount:dataBuffer.totalRedCount2,
+        totalRedCount2:dataBuffer.totalRedCount2,
         totalRedRate:dataBuffer.totalRedRate
       })
     }

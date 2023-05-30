@@ -1,0 +1,75 @@
+<!--pages/interest/interest.wxml-->
+<view class="container">
+  <view class="main">
+    <view class="pageTitle">利率计算器</view>
+    <view class="title">按揭计算</view>
+    <view class="content">
+      <form bindsubmit="bindSubmitMonthly">
+        <view class="test">
+          贷款金额：
+          <input name="money" type="number" value="{{money}}"/>
+          万元
+        </view>
+        <view class="test">
+          贷款期数：
+          <input name="cycle" type="number" value="{{cycle}}"/>
+          期
+        </view>
+        <view class="test">
+          年化利息：
+          <input name="interest" type="digit" value="{{interest}}"/>
+          %
+        </view>
+        <view class="test">
+          <button class="mini-btn" type="warn" size="mini" formType="submit">点击计算</button>
+        </view>
+        <view>等额本息</view>
+        <view>每期月供：{{monthly}} 元</view>
+        <view>累计还款：{{monthlyTotal}} 元</view>
+        <view class="content"></view>
+        <view>等额本金</view>
+        <view>首期月供：{{first}} 元</view>
+        <view>每期递减：{{decrease}} 元</view>
+        <view>尾期月供：{{last}} 元</view>
+        <view>累计还款：{{total}} 元</view>
+      </form>
+    </view>
+    <view class="title">回报率计算</view>
+    <view class="content">
+      <form bindsubmit="bindSubmitRate">
+        <view class="test">
+          期初金额：
+          <input name="start" type="number" value="{{start}}"/>
+          万元
+          <button class="clear" type="warn" size="mini" bindtap="clearStart">清空</button>
+        </view>
+        <view class="test">
+          期末金额：
+          <input name="end" type="number" value="{{end}}"/>
+          万元
+          <button class="clear" type="warn" size="mini" bindtap="clearEnd">清空</button>
+        </view>
+        <view class="test">
+          期间月数：
+          <input name="months" type="number" value="{{months}}"/>
+          个月
+          <button class="clear" type="warn" size="mini" bindtap="clearMonths">清空</button>
+        </view>
+        <view class="test">
+          年回报率：
+          <input name="rate" type="digit" value="{{rate}}"/>
+          %　
+          <button class="clear" type="warn" size="mini" bindtap="clearRate">清空</button>
+        </view>
+        <view class="test">
+          <button class="mini-btn" type="warn" size="mini" bindtap="bindReset">重 置</button>
+          <button class="mini-btn" type="warn" size="mini" formType="submit">点击计算</button>
+        </view>
+        <view>以上四项任三算一，都填则计算回报率</view>
+      </form>
+    </view>
+    <view class="content"></view>
+    <view class="footer" bindtap="bindBack">回首页</view>
+  </view>
+</view>
+

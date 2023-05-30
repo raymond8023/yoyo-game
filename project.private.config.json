@@ -27,6 +27,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/interest/interest",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

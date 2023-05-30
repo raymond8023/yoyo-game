@@ -1,0 +1,29 @@
+/* pages/interest/interest.wxss */
+
+.test{
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+}
+
+.test input{
+  width: 200rpx;
+  border:1rpx solid #2c2c2c;
+  margin-right: 10rpx;
+}
+
+.test .mini-btn{
+  width: 300rpx;
+}
+
+.option{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.clear{
+  width: 100rpx;
+}

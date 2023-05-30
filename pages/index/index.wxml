@@ -16,7 +16,10 @@
         <image src="../../images/fair.png" mode="widthFix"></image>
         <text>公平的赌博</text>
       </view>
-
+      <view class="item" bindtap="bindMenu" data-link="interest">
+        <image src="../../images/interest.png" mode="widthFix"></image>
+        <text>利率计算器</text>
+      </view>
     </view>
   </view>
 </view>
