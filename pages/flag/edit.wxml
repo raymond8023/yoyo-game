@@ -1,0 +1,28 @@
+<!--pages/flag/edit.wxml-->
+<view class="container">
+    <view class="main">
+        <view class="pageTitle">添加/编辑</view>
+        <view class="title"> ID：{{flagId}} </view>
+        <view class="content">
+            <view class="flag_item"> 内容：<input bindinput="bindInput" placeholder="点击输入" value="{{content}}"></input>
+            </view>
+            <view class="flag_item"> 年份：{{start_year}} </view>
+            <view class="flag_item"> 开始日期： <picker bindchange="bindDate" mode="date" value="{{date}}">
+                    <text>{{start_date}}</text>
+                </picker>
+            </view>
+            <view class="flag_item"> 是否已实现：<switch bindchange="bindFinish" checked="{{is_done}}"></switch>
+            </view>
+            <view class="flag_item" wx:if="{{is_done}}"> 完成日期： <picker bindchange="bindFinishDate" mode="date" start="2021-07-16" value="{{date}}">
+                    <text>{{finish_date}}</text>
+                </picker>
+            </view>
+        </view>
+        <view class="title">
+            <button bindtap="bindDelete" size="mini" wx:if="{{flagId!='new'}}">删 除</button>
+            <button bindtap="bindSubmit" size="mini">提 交</button>
+        </view>
+        <view class="content"></view>
+        <view bindtap="bindBack" class="footer">回首页</view>
+    </view>
+</view>

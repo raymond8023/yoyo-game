@@ -7,7 +7,9 @@
         "pages/fairgamble/check",
         "pages/boxes/boxes",
         "pages/boxes/check",
-        "pages/interest/interest"
+        "pages/interest/interest",
+        "pages/flag/flag",
+        "pages/flag/edit"
     ],
     "window": {
         "backgroundTextStyle": "light",

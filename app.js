@@ -6,11 +6,11 @@
 
 
 App({
-  // globalData:{
-  //   yesApiHost: "https://hn216.api.yesapi.cn", // TODO: 配置成你所在的接口域名记得加https
-  //   yesApiAppKey: "DAA98CD0956F702EF75A047B73C01AF0", // TODO：改为你的APP_KEY 在http://open.yesapi.cn/?r=App/Mine寻找
-  //   yesApiAppSecret: "2k6m0fTnZEge8IvEwLrfpzBZAWRKb9oSEmyBhxHzvGHDFZiFkM3tIUjW93QPH9dlyKOff", // TODO：改为你的APP_SECRET
-  // },
+  globalData:{
+    yesApiHost: "https://hn216.api.yesapi.cn", // TODO: 配置成你所在的接口域名记得加https
+    yesApiAppKey: "DAA98CD0956F702EF75A047B73C01AF0", // TODO：改为你的APP_KEY 在http://open.yesapi.cn/?r=App/Mine寻找
+    yesApiAppSecret: "2k6m0fTnZEge8IvEwLrfpzBZAWRKb9oSEmyBhxHzvGHDFZiFkM3tIUjW93QPH9dlyKOff", // TODO：改为你的APP_SECRET
+  },
 
   // getOpenid(){
   //   return new Promise((resolve, reject) => {

@@ -20,6 +20,10 @@
         <image src="../../images/interest.png" mode="widthFix"></image>
         <text>利率计算器</text>
       </view>
+      <view bindtap="bindMenu" class="item" data-link="flag">
+          <image mode="widthFix" src="../../images/flag.png"></image>
+          <text>立个小目标</text>
+      </view>
     </view>
   </view>
 </view>

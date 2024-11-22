@@ -8,8 +8,8 @@
     "miniprogram": {
       "list": [
         {
-          "name": "",
-          "pathName": "pages/boxes/boxes",
+          "name": "edit",
+          "pathName": "pages/flag/flag",
           "query": "",
           "launchMode": "default",
           "scene": null

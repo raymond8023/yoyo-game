@@ -1,0 +1,24 @@
+<!--pages/flag/flag.wxml-->
+<view class="container">
+    <view class="main">
+        <view class="pageTitle">我的小目标</view>
+        <view wx:for="{{groupedFlags}}" wx:key="year">
+            <view class="title"> {{item.year}}年 <text bindtap="bindShowAll" wx:if="{{isShowAll}}">---</text>
+                <text bindtap="bindShowAll" wx:else>○○○</text>
+            </view>
+            <view class="flag">
+                <view bindlongpress="bindEdit" data-id="{{item.id}}" wx:if="{{item.is_done=='0'||isShowAll}}" wx:for="{{item.events}}" wx:key="id">
+                    <view>
+                        <image mode="widthFix" src="../../images/done.png" wx:if="{{item.is_done=='1'}}"></image>
+                        <image mode="widthFix" src="../../images/blank.png" wx:else></image> {{index+1}}： {{item.content}} </view>
+                    <text wx:if="{{isShowAll}}">始于{{item.start_date}}<text wx:if="{{item.is_done==true}}">，完成于{{item.finish_date}}</text>
+                    </text>
+                </view>
+            </view>
+        </view>
+        <view bindtap="bindEdit" class="title" data-id="new"> 添加 <text>>>></text>
+        </view>
+        <view class="content"></view>
+        <view bindtap="bindBack" class="footer">回首页</view>
+    </view>
+</view>

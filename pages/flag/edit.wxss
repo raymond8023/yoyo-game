@@ -1,0 +1,18 @@
+/* pages/flag/edit.wxss */
+.flag_item {
+  display: flex;
+  flex-direction: row;
+  font-size: 50rpx;
+  height: 100rpx;
+  margin: 20rpx;
+}
+
+.flag_item input {
+  border: 1rpx solid #ccc;
+  height: 70rpx;
+  width: 400rpx;
+}
+
+.title button {
+  width: 250rpx;
+}

@@ -1,0 +1,30 @@
+/* pages/flag/flag.wxss */
+.title text {
+  color: #fff;
+}
+
+image {
+  vertical-align: middle;
+  width: 40rpx;
+}
+
+.flag {
+  margin: 40rpx 40rpx 40rpx 80rpx;
+}
+
+.flag view view {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 60rpx;
+  margin: 10rpx;
+  font-size: 35rpx;
+}
+
+.flag view view image {
+  margin-right: 10rpx;
+}
+
+.flag view text {
+  font-size: 30rpx;
+}
